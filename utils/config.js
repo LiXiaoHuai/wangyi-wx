@@ -28,6 +28,13 @@ var config = {
   SetDefaultAddress: hostUrl + '/Api/Address/set_default',
   //删除地址
   DelAddress: hostUrl + '/Api/Address/del_adds',
+  //添加地址
+  AddAddress: hostUrl + '/Api/Address/add_adds',
+  //获取省级城市
+  GetProvince: hostUrl + '/Api/Address/get_province',
+  GetCity: hostUrl + '/Api/Address/get_city',
+  GetArea: hostUrl + '/Api/Address/get_area',
+  GetCode: hostUrl + '/Api/Address/get_code',
 
   //用户订单状态
   OrderStatus: hostUrl + '/Api/Login/getsessionkey',
