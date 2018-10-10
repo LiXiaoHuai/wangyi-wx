@@ -1,0 +1,100 @@
+<view class="container">
+  <view class="profile-info" >
+    <image class="avatar" src="{{userInfo.avatarUrl}}" wx:if="{{userInfo.avatarUrl != '' && userInfo.avatarUrl != null}}"></image>
+    <button wx:else class="avatar" open-type="getUserInfo" bindgetuserinfo='getUserInfoBtnClick'>
+        <image class='user-icon' src='../../images/user_icon.png'></image>
+      </button>
+    <view class="info">
+      <text class="name">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <view class="user-menu">
+    <view class="item">
+      <navigator url="../user/dingdan?currentTab=0" class="a">
+        <text class="icon order"></text>
+        <text class="txt">待付款订单</text>
+      </navigator>
+    </view>
+	<view class="item">
+      <navigator url="../user/daifahuo?currentTab=0" class="a">
+        <text class="icon order"></text>
+        <text class="txt">待发货订单</text>
+      </navigator>
+    </view>
+	<view class="item">
+      <navigator url="../user/daishouhuo?currentTab=0" class="a">
+        <text class="icon order"></text>
+        <text class="txt">待收货订单</text>
+      </navigator>
+    </view>
+	<view class="item">
+      <navigator url="../user/success?currentTab=0" class="a">
+        <text class="icon order"></text>
+        <text class="txt">已完成订单</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../user/feedback" class="a">
+        <text class="icon coupon"></text>
+        <text class="txt">用户反馈</text>
+      </navigator>
+    </view>
+    <view class="item no-border">
+      <navigator url="../user/dingdan?currentTab=3&otype=finish" class="a">
+        <text class="icon gift"></text>
+        <text class="txt">已完成订单</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../user/shoucang" class="a">
+        <text class="icon address"></text>
+        <text class="txt">我的收藏</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../qyzz/qyzz" class="a">
+        <text class="icon security"></text>
+        <text class="txt">多多资质</text>
+      </navigator>
+    </view>
+    <view class="item no-border">
+      <navigator url="../user/shouhou?currentTab=0" class="a">
+        <text class="icon kefu"></text>
+        <text class="txt">退款售后</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../address/user-address/user-address" class="a">
+        <text class="icon address"></text>
+        <text class="txt">地址管理</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../synopsis/synopsis?web_id=1" class="a">
+        <text class="icon security"></text>
+        <text class="txt">关于我们</text>
+      </navigator>
+    </view>
+    <view class="item no-border">
+      <navigator url="../rituall/rituall" class="a">
+        <text class="icon kefu"></text>
+        <text class="txt">我的卡券</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="../events/events" class="a">
+        <text class="icon help"></text>
+        <text class="txt">活动信息</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="../user/feedback" class="a">
+        <text class="icon feedback"></text>
+        <text class="txt">意见反馈</text>
+      </navigator>
+    </view>
+  </view>
+
+<view class="logout" bindtap="exitLogin">多多严选版权所有</view>
+</view>
