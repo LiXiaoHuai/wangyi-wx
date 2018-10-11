@@ -27,7 +27,7 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#f4f4f4",
     "navigationBarTitleText": "多多严选",
     "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true

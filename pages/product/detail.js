@@ -115,6 +115,7 @@ Page({
           attrValueList: res.data.attrValueList,
           newGoods: res.data.newGoods,
         });
+
       } else {
         wx.showToast({
           title: res.data.err,

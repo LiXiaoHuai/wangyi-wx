@@ -113,10 +113,10 @@ Page({
         brand: brand,
         goodsCount: goodsCount,
         category: category,
-        newGoods: res.data.newGoods,
-        hotGoods: res.data.hotGoods,
-        topics: res.data.topic,
-        channel: res.data.channel,
+        newGoods: newGoods,
+        hotGoods: hotGoods,
+        topics: topics,
+        channel: channel,
       });
     });
 
