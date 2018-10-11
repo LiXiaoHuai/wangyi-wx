@@ -16,24 +16,15 @@ Page({
     
     var that = this;
     var wedId = options.wedId;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Web/web',
-      method: 'post',
-      data: { web_id: 2 },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-          var content = res.data.content;
-          WxParse.wxParse('content', 'html', content, that, 10);
-      },
-      fail: function (e) {
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      }
+
+    app.util.request(app.config.AboutUs,{
+      web_id: 2
+    },'post')
+    .thne(function(res){
+      var content = res.data.content;
+      WxParse.wxParse('content', 'html', content, that, 10);
     })
+
   },
   onReady:function(){
     // 页面渲染完成

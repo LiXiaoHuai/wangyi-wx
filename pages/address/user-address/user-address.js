@@ -68,7 +68,7 @@ Page({
       success: function(res) {
 
         res.confirm && app.util.request(app.config,DelAddress,{
-          user_id: app.d.userId,
+          user_id: app.data.userId,
           id_arr: addrId
         },'post')
         .then(function(res){

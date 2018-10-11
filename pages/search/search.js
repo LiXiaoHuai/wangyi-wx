@@ -13,29 +13,20 @@ Page({
   },
   onLoad:function(options){
     var that = this;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Search/index',
-      method:'post',
-      data: {uid:app.d.userId},
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        var remen = res.data.remen;
-        var history = res.data.history;
 
-        that.setData({
-          historyKeyList:history,
-          hotKeyList:remen,
-        });
-      },
-      fail:function(e){
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      },
-    })
+    app.util.request(app.config.SearchIndex,{
+      uid:app.data.userId
+    },'post')
+    .then(function(res){
+      var remen = res.data.remen;
+      var history = res.data.history;
+
+      that.setData({
+        historyKeyList:history,
+        hotKeyList:remen,
+      });
+    });
+
   },
   onReachBottom:function(){
       //下拉加载更多多...
@@ -115,30 +106,17 @@ Page({
   },
   searchProductData:function(){
     var that = this;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Search/searches',
-      method:'post',
-      data: {
-        keyword:that.data.searchValue,
-        uid: app.d.userId,
-        page:that.data.page,
-      },
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {   
-        var data = res.data.pro;
-        that.setData({
-          productData:that.data.productData.concat(data),
-        });
-      },
-      fail:function(e){
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      },
-    });
-  },
 
+    app.util.request(app.config.Searchs,{
+      keyword:that.data.searchValue,
+      uid: app.data.userId,
+      page:that.data.page
+    },'post')
+    .then(function(res){
+      var data = res.data.pro;
+      that.setData({
+        productData:that.data.productData.concat(data),
+      });
+    });
+  }
 });

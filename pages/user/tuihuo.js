@@ -33,7 +33,7 @@ Page({
     // }
     var that = this;
     wx.request({
-      url: app.d.ceshiUrl + '/Api/Order/orders_edit',
+      url: app.data.ceshiUrl + '/Api/Order/orders_edit',
       method:'post',
       data: {
         id: that.data.orderId,

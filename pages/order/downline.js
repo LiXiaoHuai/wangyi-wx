@@ -37,38 +37,30 @@ Page({
     }
     //post data
 
-    wx.request({
-      url: app.d.hostUrl + '/ztb/orderZBT/AddpaymentInfo',
-      method:'post',
-      data: {
-         orderId: that.data.orderId,
-        payBankName: that.data.payBankName,
-        payAccountName: that.data.payAccountName,
-        payMethod:that.data.payMethod,
-        payNo:that.data.payNo,
-        payRemark:that.data.payRemark,
-      },
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res)
-        //--init data        
-        var data = res.data;
-        console.log(data);
-        //创建订单成功
-        wx.showToast({
-          title: data.message,
-          icon: 'success',
-          duration: 2000
+    app.util.request(app.config.AddpaymentInfo,{
+      orderId: that.data.orderId,
+      payBankName: that.data.payBankName,
+      payAccountName: that.data.payAccountName,
+      payMethod:that.data.payMethod,
+      payNo:that.data.payNo,
+      payRemark:that.data.payRemark
+    },'post')
+    .then(function(res){
+      console.log(res)
+      //--init data        
+      var data = res.data;
+      console.log(data);
+      //创建订单成功
+      wx.showToast({
+        title: data.message,
+        icon: 'success',
+        duration: 2000
+      });
+      if(data.result == 'ok'){
+        wx.navigateTo({
+          url: '/pages/user/dingdan?currentTab=2',
         });
-        if(data.result == 'ok'){
-          wx.navigateTo({
-            url: '/pages/user/dingdan?currentTab=2',
-          });
-        }//endok
-        //endInitData
-      },
+      }//endok
     });
 
   },

@@ -44,10 +44,10 @@ Page({
 
     // app.util.request(app.config.AddFavorites,)
     // wx.request({
-    //   url: app.d.hostUrl + '/Api/Product/col',
+    //   url: app.data.hostUrl + '/Api/Product/col',
     //   method:'post',
     //   data: {
-    //     userId: app.d.userId,
+    //     userId: app.data.userId,
     //     pageindex: that.data.page,
     //     pagesize:100,
     //   },

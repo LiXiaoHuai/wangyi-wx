@@ -14,18 +14,12 @@ Page({
   },
   loadProductDetail:function(){
     var that = this;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Order/order_details',
-      method:'post',
-      data: {
-        order_id: that.data.orderId,
-      },
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
 
-        var status = res.data.status;
+    app.util.request(app.config.OrderDetail,{
+      order_id: that.data.orderId
+    },'post')
+    .then(function(res){
+      var status = res.data.status;
         if(status==1){
           var pro = res.data.pro;
           var ord = res.data.ord;
@@ -39,14 +33,6 @@ Page({
             duration: 2000
           });
         }
-      },
-      fail: function () {
-          // fail
-          wx.showToast({
-            title: '网络异常！',
-            duration: 2000
-          });
-      }
     });
   },
 

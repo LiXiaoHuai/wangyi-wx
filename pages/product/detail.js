@@ -329,12 +329,12 @@ Page({
 
   //   var imgs = data.LunBoProductImage.split(';');
   //   for(let url of imgs){
-  //     url && data["LunBoProductImageUrl"].push(app.d.hostImg + url);
+  //     url && data["LunBoProductImageUrl"].push(app.data.hostImg + url);
   //   }
 
   //   data.Price = data.Price/100;
-  //   data.VedioImagePath = app.d.hostVideo + '/' +data.VedioImagePath;
-  //   data.videoPath = app.d.hostVideo + '/' +data.videoPath;
+  //   data.VedioImagePath = app.data.hostVideo + '/' +data.VedioImagePath;
+  //   data.videoPath = app.data.hostVideo + '/' +data.videoPath;
   // },
 
 
@@ -368,7 +368,7 @@ Page({
   addShopCart:function(e){ //添加到购物车
     var that = this;
     app.util.request(app.config.AddShopCart, {
-      uid: app.d.userId,
+      uid: app.data.userId,
       pid: that.data.productId,
       num: that.data.buynum,
     },'post')

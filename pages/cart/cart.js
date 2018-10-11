@@ -20,7 +20,7 @@ Page({
 
     var cart_id = e.currentTarget.dataset.cartid;
     var data = {
-      user_id: app.d.userId,
+      user_id: app.data.userId,
       num: num,
       cart_id: cart_id
     };
@@ -60,7 +60,7 @@ Page({
     console.log(num);
     var cart_id = e.currentTarget.dataset.cartid;
     var data = {
-      user_id: app.d.userId,
+      user_id: app.data.userId,
       num: num,
       cart_id: cart_id
     };

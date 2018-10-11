@@ -49,38 +49,23 @@ Page({
   getMore: function(e) {
     var that = this;
     var page = that.data.page;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Index/getlist',
-      method: 'post',
-      data: {
-        page: page
-      },
-      header: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function(res) {
-        var prolist = res.data.prolist;
-        if (prolist == '') {
-          wx.showToast({
-            title: '没有更多数据！',
-            duration: 2000
-          });
-          return false;
-        }
-        //that.initProductData(data);
-        that.setData({
-          page: page + 1,
-          productData: that.data.productData.concat(prolist)
-        });
-        //endInitData
-      },
-      fail: function(e) {
+
+    app.util.request(app.config.IndexGetMore,{page},'post')
+    .then(function(res){
+      var prolist = res.data.prolist;
+      if (prolist == '') {
         wx.showToast({
-          title: '网络异常！',
+          title: '没有更多数据！',
           duration: 2000
         });
+        return false;
       }
-    })
+      //that.initProductData(data);
+      that.setData({
+        page: page + 1,
+        productData: that.data.productData.concat(prolist)
+      });
+    });
   },
 
   changeIndicatorDots: function(e) {

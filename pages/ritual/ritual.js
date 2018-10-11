@@ -6,60 +6,35 @@ Page({
   },
    getvou:function(e){
     var vid = e.currentTarget.dataset.vid;
-    var uid = app.d.userId;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Voucher/get_voucher',
-      method:'post',
-      data: {vid:vid,uid:uid},
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {  
-        var status = res.data.status;
-        if(status==1){
-          wx.showToast({
-            title: '领取成功！',
-            duration: 2000
-          });
-        }else{
-          wx.showToast({
-            title: res.data.err,
-            duration: 2000
-          });
-        }
-        //endInitData
-      },
-      fail:function(e){
+    var uid = app.data.userId;
+
+    app.util.request(app.confog.GetVoucher,{
+      vid:vid,uid:uid
+    },'post')
+    .then(function(res){
+      var status = res.data.status;
+      if(status==1){
         wx.showToast({
-          title: '网络异常！',
+          title: '领取成功！',
           duration: 2000
         });
-      },
+      }else{
+        wx.showToast({
+          title: res.data.err,
+          duration: 2000
+        });
+      }
     });
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     var that = this;
-    wx.request({
-      url: app.d.ceshiUrl + '/Api/Voucher/index',
-      method:'post',
-      data: {},
-      header: {
-        'Content-Type':  'application/x-www-form-urlencoded'
-      },
-      success: function (res) {  
-        var vou = res.data.vou;
-        that.setData({
-          vou:vou,
-        });
-        //endInitData
-      },
-      error:function(e){
-        wx.showToast({
-          title: '网络异常！',
-          duration: 2000
-        });
-      },
+    app.util.request(app.config.VoucherList,{},'post')
+    .then(function(res){
+      var vou = res.data.vou;
+      that.setData({
+        vou:vou,
+      });
     });
   },
   onReady:function(){

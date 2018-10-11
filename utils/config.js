@@ -15,13 +15,24 @@ var config = {
 
   //首页接口
   IndexUrl: hostUrl + '/Api/Index/index',
+  //首页加载更多
+  IndexGetMore: hostUrl + '/Api/Index/getlist',
+
+  //搜索页面
+  SearchIndex:  hostUrl + '/Api/Search/index',
+  Searchs: hostUrl + '/Api/Search/searches',
 
   //意见反馈
   Feedback: hostUrl + '/Api/User/feedback',
   //关于我们
   AboutUs: hostUrl + '/Api/Web/web',
-  //卡券
+  //用户卡券
   Voucher: hostUrl + '/Api/User/voucher',
+  //领取卡券
+  GetVoucher: hostUrl + '/Api/Voucher/get_voucher',
+  //卡券列表
+  VoucherList: hostUrl + '/Api/Voucher/index',
+
   //获取地址列表
   Address: hostUrl + '/Api/Address/index',
   //设置默认地址
@@ -44,21 +55,24 @@ var config = {
   OrderAction: hostUrl + '/Api/Order/orders_edit',
   //获取订单列表
   OrderList: hostUrl + '/Api/Order/index',
-  //
   LoadReturnOrderList: hostUrl + '/Api/Order/order_refund',
+  OrderDetail: hostUrl + '/Api/Order/order_details',
   //订单支付
   Wxpay: hostUrl + '/Api/Wxpay/wxpay',
-
+  //支付信息
+  AddpaymentInfo: hostUrl + '/ztb/orderZBT/AddpaymentInfo',
+  //获取购物车信息
+  BuyCart: hostUrl + '/Api/Payment/buy_cart',
+  //创建订单
+  Payment: hostUrl + '/Api/Payment/payment',
 
 
   //用户登录
   Authlogin: hostUrl + '/Api/Login/authlogin',
 
 
-
   //获取专题数据
   TopicList: hostUrl + '/Api/Zhuti/index',
-
 
 
   //获取分类信息
