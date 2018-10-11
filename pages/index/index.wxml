@@ -151,7 +151,7 @@
     </view>
     <view class="b">
       <block wx:for="{{productData}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
-        <view class="item {{index % 2 == 0 ? '' : 'item-b'}}">
+        <view class="item">
           <navigator url="../product/detail?productId={{item.id}}" class="a">
             <image class="img" src="{{item.photo_x}}" background-size="cover"></image>
             <text class="name">{{item.name}}</text>
@@ -160,10 +160,10 @@
         </view>
       </block>
       <view class="item item-b item-more">
-        <navigator class="more-a" bindtap="getMore">
+        <view class="more-a" bindtap="getMore">
           <view class="txt">更多好物</view>
           <image class="icon" src="../../static/images/icon_go_more.png" background-size="cover"></image>
-        </navigator>
+        </view>
       </view>
     </view>
   </view>

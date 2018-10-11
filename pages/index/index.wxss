@@ -351,14 +351,13 @@
   overflow: hidden;
   text-align: center;
 }
+.good-grid .b .item:nth-of-type(even){
+  margin-left: 6.25rpx;
+}
 
 .good-grid .b .item .a{
   height: 452rpx;
   width: 100%;
-}
-
-.good-grid .b .item-b {
-  margin-left: 6.25rpx;
 }
 
 .good-grid .item .img {

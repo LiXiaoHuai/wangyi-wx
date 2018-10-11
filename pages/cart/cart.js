@@ -92,17 +92,39 @@ Page({
   bindCheckbox: function(e) {
     /*绑定点击事件，将checkbox样式改变为选中与非选中*/
     //拿到下标值，以在carts作遍历指示用
+    
     var index = parseInt(e.currentTarget.dataset.index);
     //原始的icon状态
     var selected = this.data.carts[index].selected;
     var carts = this.data.carts;
     // 对勾选状态取反
     carts[index].selected = !selected;
+
+    this.isCheckAll();
+
     // 写回经点击修改后的数组
     this.setData({
       carts: carts
     });
     this.sum()
+  },
+
+  //判断是否全选
+  isCheckAll(){
+    var that = this;
+    var carts = that.data.carts;
+    var selecteds = 0;
+
+    carts.forEach(function(item,k){
+      item.selected && selecteds++;
+    });
+
+    console.log(carts.length,selecteds);
+
+    this.setData({
+      selectedAllStatus: carts.length == selecteds
+    });
+
   },
 
   bindSelectAll: function() {

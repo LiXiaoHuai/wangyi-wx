@@ -16,8 +16,8 @@
     <view class="list">
       <view class="group-item">
         <view class="goods">
-          <view class="item edit" wx:for="{{carts}}" data-title="{{item.pro_name}}" id="{{item.id}}">
-	      <view class="checkbox checked" wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}"></view>
+          <view class="item edit" wx:for="{{carts}}" data-title="{{item.pro_name}}" id="{{item.id}}" wx:key="*this">
+	        <view class="checkbox checked" wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}"></view>
           <view class="checkbox" wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}"></view>
 		 
 		 
@@ -31,7 +31,7 @@
                 <view class="attr">已选择：{{item.goods_specifition_name_value}}</view>
                 <view class="b">
                   <text class="price">￥{{item.price}}</text>
-                  <view class="selnum"><text bindtap="removeShopCard" data-cartid="{{item.id}}" class="modal-close">x</text>
+                  <view class="selnum"><text bindtap="removeShopCard" data-cartid="{{item.id}}" class="modal-close">×</text>
                     <view class="cut" data-index="{{index}}" bindtap="bindMinus" data-cartid="{{item.id}}">-</view>
                     <input class="number" type="number" bindchange="bindManual" value="{{item.num}}"/>
                     <view class="add" data-index="{{index}}" bindtap="bindPlus" data-cartid="{{item.id}}">+</view>
@@ -75,7 +75,7 @@
     </view>
     <view class="cart-bottom" bindtap="bindSelectAll">
       <view class="checkbox checked" wx:if="{{selectedAllStatus}}" type="success_circle" size="24">全选</view>
-	  <view class="checkbox" wx:else type="circle" size="24">全选</view>
+	    <view class="checkbox" wx:else type="circle" size="24">全选</view>
 		
       <view class="total">{{total}}</view>
 
