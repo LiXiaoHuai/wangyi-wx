@@ -100,14 +100,16 @@ Page({
     var that = this;
 
     app.util.request(app.config.ProductIndex, { pro_id: that.data.productId},'post').then(function(res){
+      console.log('product============')
+      console.log(res)
+
       //--init data 
       var status = res.data.status;
       if (status == 1) {
         var pro = res.data.pro;
         var content = pro.content;
         var newGoods = res.data.newGoods;
-        //that.initProductData(data);
-        WxParse.wxParse('content', 'html', content, that, 3);
+
         that.setData({
           itemData: pro,
           bannerItem: pro.img_arr,
@@ -116,6 +118,7 @@ Page({
           newGoods: res.data.newGoods,
         });
 
+        WxParse.wxParse('content', 'html', content, that, 3);
       } else {
         wx.showToast({
           title: res.data.err,

@@ -1,6 +1,8 @@
 
 // 数据请求地址
-const hostUrl = 'http://www.wangyi.com/index.php';
+// const hostUrl = 'http://www.wangyi.com/index.php';
+
+const hostUrl = 'http://wangyi.phpcoder.cn/index.php';
 
 var config = {
 
