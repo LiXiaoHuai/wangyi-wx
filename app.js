@@ -14,7 +14,7 @@ App({
   data: {
     appId:"wxf1f43b8def468390",
     appKey:"b6769dd2072eb917282170dc8ee91a66",
-    userId:3
+    userId:4
   },
 
   util: util,
