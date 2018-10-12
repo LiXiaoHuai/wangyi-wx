@@ -96,5 +96,5 @@
     </view>
   </view>
 
-<view class="logout" bindtap="exitLogin">多多严选版权所有</view>
+<view class="logout" bindtap="exitLogin">小史严选版权所有</view>
 </view>

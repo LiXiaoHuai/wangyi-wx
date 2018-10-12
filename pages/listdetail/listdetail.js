@@ -83,7 +83,7 @@ Page({
     console.log(options)
     //更改头部标题
     wx.setNavigationBarTitle({
-      title: options.cat_name || '多多严选',
+      title: options.cat_name || '小史严选',
     });
 
     //页面初始化 options为页面跳转所带来的参数
