@@ -40,7 +40,7 @@
         <text class="txt">用户反馈</text>
       </navigator>
     </view>
-    <view class="item no-border">
+    <view class="item">
       <navigator url="../user/dingdan?currentTab=3&otype=finish" class="a">
         <text class="icon gift"></text>
         <text class="txt">已完成订单</text>
@@ -58,7 +58,7 @@
         <text class="txt">多多资质</text>
       </navigator>
     </view>
-    <view class="item no-border">
+    <view class="item">
       <navigator url="../user/shouhou?currentTab=0" class="a">
         <text class="icon kefu"></text>
         <text class="txt">退款售后</text>
@@ -76,7 +76,7 @@
         <text class="txt">关于我们</text>
       </navigator>
     </view>
-    <view class="item no-border">
+    <view class="item">
       <navigator url="../rituall/rituall" class="a">
         <text class="icon kefu"></text>
         <text class="txt">我的卡券</text>
@@ -93,6 +93,8 @@
         <text class="icon feedback"></text>
         <text class="txt">意见反馈</text>
       </navigator>
+    </view>
+    <view class="item item-bottom">
     </view>
   </view>
 
