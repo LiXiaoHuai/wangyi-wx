@@ -96,6 +96,9 @@ Page({
   onLoad: function(options) {
     var that = this;
     app.util.request(app.config.IndexUrl,{},'post').then(function(res){
+
+      console.log('indexData===========');
+      console.log(res);
       var ggtop = res.data.ggtop;
       var procat = res.data.procat;
       var prolist = res.data.prolist;
@@ -115,8 +118,8 @@ Page({
         category: category,
         newGoods: newGoods,
         hotGoods: hotGoods,
-        topics: topics,
-        channel: channel,
+        topics: topics || [],
+        channel: channel || [],
       });
     });
 

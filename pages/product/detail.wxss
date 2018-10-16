@@ -60,6 +60,9 @@
   margin-bottom: 5.208rpx;
   font-size: 41rpx;
   line-height: 41rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .goods-info .desc {
@@ -68,6 +71,9 @@
   font-size: 24rpx;
   line-height: 36rpx;
   color: #999;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .goods-info .price {

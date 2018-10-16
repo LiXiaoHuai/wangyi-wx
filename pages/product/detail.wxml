@@ -16,8 +16,8 @@
         <text class="desc">{{itemData.intro}}</text>
         <text class="price">￥{{itemData.price_yh}}</text>
         <view class="brand">
-          <navigator url="../listdetail/listdetail?brandId={{itemData.brand}}">
-            <text>{{itemData.brand}}</text>
+          <navigator url="../listdetail/listdetail?brandId={{itemData.brand_id}}">
+            <text>{{itemData.brand || ''}}</text>
           </navigator>
         </view>
       </view>

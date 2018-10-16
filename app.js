@@ -20,7 +20,7 @@ App({
   util: util,
   config: config, 
 
-  onLaunch: function () {
+  onLaunch: function (e) {
 
     //自动更新版本
     const updateManager = wx.getUpdateManager();
@@ -58,11 +58,9 @@ App({
 
   },
   getUserInfo:function(cb){
-    var that = this
-    if (this.globalData.userInfo) {
+    var that = this;
 
-      typeof cb == "function" && cb(this.globalData.userInfo)
-    } else {
+    if (!that.globalData.userInfo) {
       //调用登录接口
       wx.login({
         success: function (res) {
@@ -70,12 +68,16 @@ App({
           //get wx user simple info
           wx.getUserInfo({
             success: function (res) {
-              that.globalData.userInfo = res.userInfo
-              typeof cb == "function" && cb(that.globalData.userInfo);
+
+              that.globalData.userInfo = res.userInfo;
+            
               that.getUserSessionKey(code);
             },
             error:function(res){
-
+              wx.showToast({
+                title: '获取用户信息失败！',
+                duration: 3000
+              });
             }
           });
         }
@@ -99,6 +101,8 @@ App({
             title: data.err,
             duration: 2000
           });
+
+          console.log('获取订单状态出错！');
           return false;
         }
         that.globalData.userInfo['sessionId'] = data.session_key;

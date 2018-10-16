@@ -13,7 +13,7 @@ Page({
     productId:0,
     itemData:{},
     bannerItem:[],
-	newGoods: [],
+	  newGoods: [],
     buynum:1,
     // 产品图片轮播
     indicatorDots: true,
@@ -154,7 +154,7 @@ Page({
       }
     */
     // 把数据对象的数据（视图使用），写到局部内
-    var attrValueList = this.data.attrValueList;
+    var attrValueList = this.data.attrValueList || [];
     // 遍历获取的数据
     for (var i = 0; i < commodityAttr.length; i++) {
       for (var j = 0; j < commodityAttr[i].attrValueList.length; j++) {
