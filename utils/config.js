@@ -1,8 +1,8 @@
 
 // 数据请求地址
-// const hostUrl = 'http://www.wangyi.com/index.php';
+const hostUrl = 'http://www.wangyi.com/index.php';
 
-const hostUrl = 'http://wangyi.phpcoder.cn/index.php';
+// const hostUrl = 'http://wangyi.phpcoder.cn/index.php';
 
 var config = {
 
@@ -50,7 +50,7 @@ var config = {
   GetCode: hostUrl + '/Api/Address/get_code',
 
   //用户订单状态
-  OrderStatus: hostUrl + '/Api/Login/getsessionkey',
+  GetSessionKey: hostUrl + '/Api/Login/getsessionkey',
   //获取用户订单信息
   OrderInfo: hostUrl + '/Api/User/getorder',
   //用户订单操作

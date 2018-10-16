@@ -86,30 +86,50 @@ App({
   },
   
   getUserSessionKey:function(code){
-    //用户的订单状态
+    //用户的SessionKey
     var that = this;
+    var appId = that.data.appId;
+    var secret = that.data.appKey;
 
-    util.request(config.OrderStatus,{code:code},'post').then(function(res){
-
-      console.log('OrderStatus======')
-      console.log(res)
-      //--init data        
-      var data = res.data;
-      if(data && data != ''){
-        if (data.status == 0) {
-          wx.showToast({
-            title: data.err,
-            duration: 2000
-          });
-
-          console.log('获取订单状态出错！');
-          return false;
-        }
+    wx.request({
+      url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+      success: function (res) {
+        console.log(res)
+        var data = res.data;
         that.globalData.userInfo['sessionId'] = data.session_key;
         that.globalData.userInfo['openid'] = data.openid;
         that.onLoginUser();
+      },
+      error:function(res){
+        wx.showToast({
+          title: '获取用户信息失败！',
+          duration: 3000
+        });
       }
-    });
+    })
+
+    // util.request(config.GetSessionKey,{code:code},'post').then(function(res){
+
+    //   console.log('SessionKey======')
+    //   console.log(res)
+    //   //--init data        
+    //   var data = res.data;
+
+    //   if(data && data != ''){
+    //     if (data.status == 0) {
+    //       wx.showToast({
+    //         title: data.err,
+    //         duration: 2000
+    //       });
+
+    //       console.log('获取SessionKey出错！');
+    //       return false;
+    //     }
+    //     that.globalData.userInfo['sessionId'] = data.session_key;
+    //     that.globalData.userInfo['openid'] = data.openid;
+    //     that.onLoginUser();
+    //   }
+    // });
   },
 
   onLoginUser:function(){
@@ -150,7 +170,7 @@ App({
         });
         return false;
       }
-      that.d.userId = userId;
+      that.data.userId = userId;
     });
   },
 

@@ -22,7 +22,7 @@ Page({
     this.initSystemInfo();
     this.setData({
       currentTab: parseInt(options.currentTab),
-      isStatus: options.otype
+      isStatus: options.otype || this.data.isStatus
     });
 
     if (this.data.currentTab == 4) {
