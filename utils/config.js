@@ -1,8 +1,8 @@
 
 // 数据请求地址
-const hostUrl = 'http://www.wangyi.com/index.php';
+// const hostUrl = 'http://www.wangyi.com/index.php';
 
-// const hostUrl = 'http://wangyi.phpcoder.cn/index.php';
+const hostUrl = 'http://wangyi.phpcoder.cn/index.php';
 
 var config = {
 
@@ -15,7 +15,7 @@ var config = {
   // // 百度AK填写，用于获取地理位置 根据实际地区申请获取自己本地区的AK秘钥
   // baiduAk: ''
 
-  //首页接口
+  //首页接口newGoodsnewGoodsnewGoods
   IndexUrl: hostUrl + '/Api/Index/index',
   //首页加载更多
   IndexGetMore: hostUrl + '/Api/Index/getlist',

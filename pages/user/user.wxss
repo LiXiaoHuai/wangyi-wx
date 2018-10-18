@@ -27,6 +27,12 @@ page {
   height: 148rpx;
   width: 148rpx;
   border-radius: 50%;
+  padding: 0;
+}
+.profile-info .avatar .user-icon{
+  height: 148rpx;
+  width: 148rpx;
+  border-radius: 50%;
 }
 
 .profile-info .info {

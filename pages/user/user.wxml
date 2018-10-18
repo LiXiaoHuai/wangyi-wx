@@ -5,7 +5,7 @@
         <image class='user-icon' src='../../images/user_icon.png'></image>
       </button>
     <view class="info">
-      <text class="name">{{userInfo.nickName}}</text>
+      <text class="name">{{userInfo.nickName || '用户名'}}</text>
     </view>
   </view>
 

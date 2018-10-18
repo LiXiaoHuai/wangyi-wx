@@ -17,7 +17,7 @@
         <text class="price">￥{{itemData.price_yh}}</text>
         <view class="brand">
           <navigator url="../listdetail/listdetail?brandId={{itemData.brand_id}}">
-            <text>{{itemData.brand || ''}}</text>
+            <text>{{itemData.brand || 'MUJI制造商'}}</text>
           </navigator>
         </view>
       </view>

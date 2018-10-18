@@ -108,14 +108,13 @@ Page({
       if (status == 1) {
         var pro = res.data.pro;
         var content = pro.content;
-        var newGoods = res.data.newGoods;
 
         that.setData({
           itemData: pro,
           bannerItem: pro.img_arr,
-          commodityAttr: res.data.commodityAttr,
-          attrValueList: res.data.attrValueList,
-          newGoods: res.data.newGoods,
+          commodityAttr: res.data.commodityAttr || [],
+          attrValueList: res.data.attrValueList || [],
+          newGoods: res.data.newGoods || []
         });
 
         WxParse.wxParse('content', 'html', content, that, 3);

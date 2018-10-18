@@ -87,8 +87,8 @@ Page({
     });
 
     //页面初始化 options为页面跳转所带来的参数
-    var cat_id = options.cat_id;
-    var ptype = options.ptype;
+    var cat_id = options.cat_id || '';
+    var ptype = options.ptype || '';
     var brandId = options.brandId;
     var that = this;
     that.setData({
